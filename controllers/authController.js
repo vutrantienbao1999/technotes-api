@@ -14,7 +14,6 @@ const login = async (req, res) => {
 
   const foundUser = await User.findOne({ username }).exec()
 
-
   if (!foundUser || !foundUser.active) {
     return res.status(401).json({ message: 'Unauthorized' })
   }
@@ -84,8 +83,8 @@ const refresh = (req, res) => {
       )
 
       res.json({ accessToken })
-    })
-
+    }
+  )
 }
 
 // @desc Logout
